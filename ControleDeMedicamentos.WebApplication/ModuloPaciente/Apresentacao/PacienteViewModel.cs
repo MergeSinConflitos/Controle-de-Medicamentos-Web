@@ -21,7 +21,7 @@ public record CadastrarPacienteViewModel(
 @"^\(?[1-9]{2}\)?\s?9\d{4}-?\d{4}$",ErrorMessage = "Telefone inválido")]
     string Telefone,
 
-    [Required(ErrorMessage ="O campo \"Cartão do Sus\"deve ser preenchido")]
+    [Required(ErrorMessage ="O campo \"Cartão Sus\"deve ser preenchido")]
     [RegularExpression(   @"^\d{15}$", ErrorMessage ="O cartão deve conter 15 digitos")]
     string CartaoSus,
 
@@ -41,7 +41,7 @@ public record EditarPacienteViewModel(
 @"^\(?[1-9]{2}\)?\s?9\d{4}-?\d{4}$",ErrorMessage = "Telefone inválido")]
     string Telefone,
 
-    [Required(ErrorMessage ="O campo \"Cartão do Sus\"deve ser preenchido")]
+    [Required(ErrorMessage ="O campo \"Cartão Sus\"deve ser preenchido")]
     [RegularExpression(   @"^\d{15}$", ErrorMessage ="O cartão deve conter 15 digitos")]
     string CartaoSus,
 
