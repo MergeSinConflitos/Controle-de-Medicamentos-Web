@@ -44,7 +44,7 @@ public class Fornecedor : EntidadeBase<Fornecedor>
         }
 
 
-        Regex regex = new(@"^[1-9]{2}9\d{8}$"); //cria um formato valido para Telefone
+        Regex regex = new(@"^\(?[1-9]{2}\)?\s?9\d{4}-?\d{4}$"); //cria um formato valido para Telefone
 
         if (string.IsNullOrWhiteSpace(Telefone))
         {
