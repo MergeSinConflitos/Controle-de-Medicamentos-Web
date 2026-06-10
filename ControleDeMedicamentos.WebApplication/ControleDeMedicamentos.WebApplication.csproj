@@ -21,6 +21,7 @@
     <Folder Include="Compartilhado\Infra\Arquivo\" />
     <Folder Include="ModuloFornecedor\" />
     <Folder Include="ModuloFornecedor\Aplicacao\" />
+    <Folder Include="ModuloFornecedor\Apresentacao\" />
     <Folder Include="ModuloFornecedor\Dominio\" />
     <Folder Include="ModuloFornecedor\Infra\" />
   </ItemGroup>
