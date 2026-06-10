@@ -21,6 +21,7 @@
     <Folder Include="Compartilhado\Infra\Arquivo\" />
     <Folder Include="ModuloFuncionarios\" />
     <Folder Include="ModuloFuncionarios\Dominio\" />
+    <Folder Include="ModuloFuncionarios\Infra\" />
   </ItemGroup>
 
 </Project>

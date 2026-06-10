@@ -1,12 +1,13 @@
 using System;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using ControleDeMedicamentos.WebApplication.ModuloFuncionarios.Dominio;
 
 namespace ControleDeMedicamentos.WebApplication.Compartilhado.Infra.Arquivo;
 
 public sealed class ContextoJson
 {
-
+    public List<Funcionario> Funcionario { get; set; } = new List<Funcionario>();
     private readonly string caminhoArquivo;
 
     public ContextoJson()
@@ -52,5 +53,7 @@ public sealed class ContextoJson
         if (contextoSalvo == null)
             return;
 
+        Funcionario = contextoSalvo.Funcionario;
+    
     }
 }
