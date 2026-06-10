@@ -26,6 +26,7 @@
     <Folder Include="ModuloFornecedor\Dominio\" />
     <Folder Include="ModuloFornecedor\Infra\" />
     <Folder Include="ModuloMedicamento\" />
+    <Folder Include="ModuloMedicamento\Aplicacao\" />
     <Folder Include="ModuloMedicamento\Dominio\" />
     <Folder Include="ModuloMedicamento\Infra\" />
     <Folder Include="ModuloPaciente\" />
