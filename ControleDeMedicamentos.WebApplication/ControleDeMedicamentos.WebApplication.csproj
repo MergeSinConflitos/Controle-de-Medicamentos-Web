@@ -26,6 +26,7 @@
     <Folder Include="ModuloFornecedor\Dominio\" />
     <Folder Include="ModuloFornecedor\Infra\" />
     <Folder Include="ModuloPaciente\" />
+    <Folder Include="ModuloPaciente\Aplicacao\" />
     <Folder Include="ModuloPaciente\Dominio\" />
     <Folder Include="ModuloPaciente\Infra\" />
   </ItemGroup>
