@@ -75,9 +75,9 @@ public class ServicoFuncionario
             f.Cpf)).ToList();
     }
 
-    public Result<DetalhesFuncionariosDto> SelecionarPorId(Guid id)
+    public Result<DetalhesFuncionariosDto> SelecionarPorId(Guid Id)
     {
-        Funcionario? funcionario = repositorioFuncionario.SelecionarPorId(id);
+        Funcionario? funcionario = repositorioFuncionario.SelecionarPorId(Id);
 
         if (funcionario == null)
             return Result.Fail("Funcionario não encontrado.");
