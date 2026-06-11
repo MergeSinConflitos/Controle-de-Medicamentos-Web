@@ -20,6 +20,7 @@
     <Folder Include="Compartilhado\Dominio\" />
     <Folder Include="Compartilhado\Infra\Arquivo\" />
     <Folder Include="ModuloFuncionarios\" />
+    <Folder Include="ModuloFuncionarios\Aplicacao\" />
     <Folder Include="ModuloFuncionarios\Dominio\" />
     <Folder Include="ModuloFuncionarios\Infra\" />
   </ItemGroup>
