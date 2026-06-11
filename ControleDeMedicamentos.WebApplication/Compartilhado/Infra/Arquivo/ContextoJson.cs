@@ -61,7 +61,6 @@ public sealed class ContextoJson
             return;
 
         funcionario = contextoSalvo.funcionario;
-    
         Fornecedores = contextoSalvo.Fornecedores;
         Pacientes = contextoSalvo.Pacientes;
         Medicamentos = contextoSalvo.Medicamentos;
