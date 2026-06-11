@@ -19,6 +19,10 @@
     <Folder Include="Compartilhado\Apresentacao\Views\" />
     <Folder Include="Compartilhado\Dominio\" />
     <Folder Include="Compartilhado\Infra\Arquivo\" />
+    <Folder Include="ModuloEstoqueEntrada\" />
+    <Folder Include="ModuloEstoqueEntrada\Dominio\" />
+    <Folder Include="ModuloEstoqueEntrada\Infra\" />
+    <Folder Include="ModuloFuncionario\" />
     <Folder Include="ModuloFornecedor\" />
     <Folder Include="ModuloFornecedor\Aplicacao\" />
     <Folder Include="ModuloFornecedor\Apresentacao\" />
