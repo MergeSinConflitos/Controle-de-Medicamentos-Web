@@ -5,6 +5,7 @@ using ControleDeMedicamentos.WebApplication.ModuloFuncionario.Dominio;
 using ControleDeMedicamentos.WebApplication.ModuloFornecedor.Dominio;
 using ControleDeMedicamentos.WebApplication.ModuloMedicamento.Dominio;
 using ControleDeMedicamentos.WebApplication.ModuloPaciente.Dominio;
+using ControleDeMedicamentos.WebApplication.ModuloEstoqueEntrada.Dominio;
 
 namespace ControleDeMedicamentos.WebApplication.Compartilhado.Infra.Arquivo;
 
@@ -16,6 +17,7 @@ public sealed class ContextoJson
     public List<Fornecedor> Fornecedores { get; set; } = new List<Fornecedor>();
     public List<Paciente> Pacientes { get; set; } = new List<Paciente>();
     public List<Medicamento> Medicamentos { get; set; } = new List<Medicamento>();
+    public List<EstoqueEntrada> EstoqueEntrada { get; set; } = new List<EstoqueEntrada>();
 
     public ContextoJson()
     {
@@ -64,5 +66,6 @@ public sealed class ContextoJson
         Fornecedores = contextoSalvo.Fornecedores;
         Pacientes = contextoSalvo.Pacientes;
         Medicamentos = contextoSalvo.Medicamentos;
+        EstoqueEntrada = contextoSalvo.EstoqueEntrada;
     }
 }

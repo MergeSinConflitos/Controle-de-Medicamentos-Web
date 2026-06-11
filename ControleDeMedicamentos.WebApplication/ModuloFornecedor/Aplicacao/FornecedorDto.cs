@@ -1,5 +1,3 @@
-using System;
-
 namespace ControleDeMedicamentos.WebApplication.ModuloFornecedor.Aplicacao;
 
 public record ListarFornecedoresDto(
