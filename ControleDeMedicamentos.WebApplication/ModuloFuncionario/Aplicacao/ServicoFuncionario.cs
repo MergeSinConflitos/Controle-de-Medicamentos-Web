@@ -33,7 +33,7 @@ public class ServicoFuncionario
 
     public Result Editar(EditarFuncionariosDto dto)
     {
-        if(ExisteFuncionarioComCpf(dto.Cpf))
+        if(ExisteFuncionarioComCpf(dto.Cpf, dto.Id))
         {
             return Falha(nameof(dto.Cpf), "Já existe um Funcionario com esse CPF");
         }

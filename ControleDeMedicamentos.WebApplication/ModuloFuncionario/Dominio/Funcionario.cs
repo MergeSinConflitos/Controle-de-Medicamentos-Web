@@ -1,4 +1,5 @@
 using System;
+using System.Text.RegularExpressions;
 using ControleDeMedicamentos.WebApplication.Compartilhado.Dominio;
 
 namespace ControleDeMedicamentos.WebApplication.ModuloFuncionario.Dominio;
@@ -39,10 +40,16 @@ public class Funcionario : EntidadeBase<Funcionario>
         else if (Nome.Length < 3 || Nome.Length > 100)
             erros.Add("O nome deve ter entre 3 e 100 caracteres");
         
+        Regex regex = new(@"^\(?[1-9]{2}\)?\s?9\d{4}-?\d{4}$");          //cria um formato valido para Telefone
+
         if (string.IsNullOrWhiteSpace(Telefone))
-            erros.Add("O campo 'Telefone' é obrigatório");
-        else if (Telefone.Length != 13 && Telefone.Length != 14)
-            erros.Add("O telefone deve estar no formato (XX)XXXX-XXXX ou (XX)XXXXX-XXXX");
+        {
+            erros.Add("O campo '/Telefone/' é obrigatório");
+        }
+        else if (!regex.IsMatch(Telefone))
+        {
+            erros.Add("O telefone deve estar em um formato valido (11 digitos)");
+        }
         
         if (string.IsNullOrWhiteSpace(Cpf))
             erros.Add("O campo 'CPF' é obrigatório");
