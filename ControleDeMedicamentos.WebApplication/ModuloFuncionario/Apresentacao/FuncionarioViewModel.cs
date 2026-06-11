@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace ControleDeMedicamentos.WebApplication.ModuloFuncionarios.Apresentacao;
+namespace ControleDeMedicamentos.WebApplication.ModuloFuncionario.Apresentacao;
 
 public record ListarFuncionarioViewModel(
     Guid Id,

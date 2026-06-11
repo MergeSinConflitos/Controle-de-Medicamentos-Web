@@ -19,11 +19,7 @@
     <Folder Include="Compartilhado\Apresentacao\Views\" />
     <Folder Include="Compartilhado\Dominio\" />
     <Folder Include="Compartilhado\Infra\Arquivo\" />
-    <Folder Include="ModuloFuncionarios\" />
-    <Folder Include="ModuloFuncionarios\Aplicacao\" />
-    <Folder Include="ModuloFuncionarios\Apresentacao\" />
-    <Folder Include="ModuloFuncionarios\Dominio\" />
-    <Folder Include="ModuloFuncionarios\Infra\" />
+    <Folder Include="ModuloFuncionario\" />
   </ItemGroup>
 
 </Project>

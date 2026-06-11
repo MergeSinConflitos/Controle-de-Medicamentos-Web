@@ -1,4 +1,4 @@
-namespace ControleDeMedicamentos.WebApplication.ModuloFuncionarios.Aplicacao;
+namespace ControleDeMedicamentos.WebApplication.ModuloFuncionario.Aplicacao;
 
 public record ListarFuncionariosDto(
 Guid Id, 

@@ -1,10 +1,10 @@
 using AutoMapper;
 using ControleDeMedicamentos.WebApplication.Compartilhado.Apresentacao.Extensions;
-using ControleDeMedicamentos.WebApplication.ModuloFuncionarios.Aplicacao;
+using ControleDeMedicamentos.WebApplication.ModuloFuncionario.Aplicacao;
 using FluentResults;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ControleDeMedicamentos.WebApplication.ModuloFuncionarios.Apresentacao;
+namespace ControleDeMedicamentos.WebApplication.ModuloFuncionario.Apresentacao;
 
 public class FuncionarioController(ServicoFuncionario servicoFuncionario, IMapper mapeador) : Controller
 {
@@ -48,5 +48,11 @@ public class FuncionarioController(ServicoFuncionario servicoFuncionario, IMappe
 
         TempData.AddSuccessMessage(resultado);
         return RedirectToAction(nameof(Listar));
+    }
+
+    [HttpGet]
+    public ActionResult Editar(Guid Id)
+    {
+        Result<DetalhesFuncionarioDto> resultado = servicoFuncionario.SelecionarPorId(Id);
     }
 }

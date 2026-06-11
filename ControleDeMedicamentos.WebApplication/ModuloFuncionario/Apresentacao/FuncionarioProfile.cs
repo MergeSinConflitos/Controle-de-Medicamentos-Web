@@ -1,8 +1,8 @@
 using System;
 using AutoMapper;
-using ControleDeMedicamentos.WebApplication.ModuloFuncionarios.Aplicacao;
+using ControleDeMedicamentos.WebApplication.ModuloFuncionario.Aplicacao;
 
-namespace ControleDeMedicamentos.WebApplication.ModuloFuncionarios.Apresentacao;
+namespace ControleDeMedicamentos.WebApplication.ModuloFuncionario.Apresentacao;
 
 public class FuncionarioProfile : Profile
 {

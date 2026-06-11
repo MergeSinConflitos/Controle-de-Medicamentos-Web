@@ -1,7 +1,7 @@
-using ControleDeMedicamentos.WebApplication.ModuloFuncionarios.Dominio;
+using ControleDeMedicamentos.WebApplication.ModuloFuncionario.Dominio;
 using FluentResults;
 
-namespace ControleDeMedicamentos.WebApplication.ModuloFuncionarios.Aplicacao;
+namespace ControleDeMedicamentos.WebApplication.ModuloFuncionario.Aplicacao;
 
 public class ServicoFuncionario
 {
