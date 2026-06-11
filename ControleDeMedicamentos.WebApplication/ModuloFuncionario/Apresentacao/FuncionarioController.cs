@@ -53,6 +53,68 @@ public class FuncionarioController(ServicoFuncionario servicoFuncionario, IMappe
     [HttpGet]
     public ActionResult Editar(Guid Id)
     {
-        Result<DetalhesFuncionarioDto> resultado = servicoFuncionario.SelecionarPorId(Id);
+        Result<DetalhesFuncionariosDto> resultado = servicoFuncionario.SelecionarPorId(Id);
+
+        if (resultado.IsFailed)
+        {
+            TempData.AddErrorMessage(resultado);
+
+            return RedirectToAction(nameof(Listar));
+        }
+
+        EditarFuncionarioViewModel editarVm = mapeador.Map<EditarFuncionarioViewModel>(resultado.Value);
+        return View(editarVm);
+    }
+
+    [HttpPost]
+    public ActionResult Editar(EditarFuncionarioViewModel editarVm)
+    {
+        if (!ModelState.IsValid)
+            return View(editarVm);
+
+        EditarFuncionariosDto dto = mapeador.Map<EditarFuncionariosDto>(editarVm);
+
+        Result resultado = servicoFuncionario.Editar(dto);
+
+        if (resultado.IsFailed)
+        {
+            ModelState.AddModelError(resultado);
+
+            return View(editarVm);
+        }
+
+        TempData.AddSuccessMessage(resultado);
+        return RedirectToAction(nameof(Listar));
+    }
+
+    [HttpGet]
+    public ActionResult Excluir(Guid Id)
+    {
+        Result<DetalhesFuncionariosDto> resultado = servicoFuncionario.SelecionarPorId(Id);
+
+        if (resultado.IsFailed)
+        {
+            TempData.AddErrorMessage(resultado);
+
+            return RedirectToAction(nameof(Listar));
+        }
+
+        ExcluirFuncionarioViewModel excluirVm = mapeador.Map<ExcluirFuncionarioViewModel>(resultado.Value);
+        return View(excluirVm);
+    }
+
+    [HttpPost]
+    public ActionResult Excluir(ExcluirFuncionarioViewModel excluirVm)
+    {
+        Result resultado = servicoFuncionario.Excluir(excluirVm.Id);
+
+        if (resultado.IsFailed)
+        {
+            TempData.AddErrorMessage(resultado);
+
+        }
+
+        TempData.AddSuccessMessage(resultado);
+        return RedirectToAction(nameof(Listar));
     }
 }
