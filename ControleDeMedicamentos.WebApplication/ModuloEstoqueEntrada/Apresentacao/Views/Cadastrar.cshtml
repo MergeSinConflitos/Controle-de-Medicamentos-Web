@@ -1,0 +1,56 @@
+﻿@{
+    Layout = "_Layout";
+    ViewBag.Titulo = "Cadastro de Entrada de Estoque";
+}
+
+@model CadastrarEstoqueEntradaViewModel
+
+<form class="card border-success-subtle shadow-sm mx-auto p-4" style="max-width: 620px;" asp-action="Cadastrar"
+      method="post">
+
+    <h4 class="text-success mb-4">Cadastrar Entrada de Estoque</h4>
+
+    <input asp-for="MedicamentoId" type="hidden" />
+
+    <div class="mb-3">
+        <label asp-for="FuncionarioId" class="form-label fw-semibold text-success text-uppercase small">
+            Funcionário
+        </label>
+
+        <select asp-for="FuncionarioId" class="form-select">
+            <option value="">Selecione um Funcionário</option>
+
+            @foreach (OpcaoFuncionarioViewModel funcionario in Model.Funcionarios)
+            {
+                <option value="@funcionario.Id">
+                    @funcionario.Nome
+                </option>
+            }
+        </select>
+
+        <span asp-validation-for="FuncionarioId" class="text-danger small fw-semibold"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Quantidade" class="form-label fw-semibold text-success text-uppercase small">
+            Quantidade
+        </label>
+
+        <input asp-for="Quantidade" type="number" min="1" class="form-control">
+
+        <span asp-validation-for="Quantidade" class="text-danger small fw-semibold"></span>
+    </div>
+
+    <div class="d-flex justify-content-end gap-2 mt-4">
+
+        <a class="btn btn-outline-primary rounded-pill px-4" asp-action="Listar"
+           asp-route-medicamentoId="@Model.MedicamentoId">
+            Voltar
+        </a>
+
+        <button class="btn btn-success rounded-pill px-4" type="submit">
+            Confirmar
+        </button>
+
+    </div>
+</form>
