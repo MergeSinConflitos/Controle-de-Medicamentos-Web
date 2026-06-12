@@ -25,6 +25,12 @@
     <Folder Include="ModuloEstoqueEntrada\Apresentacao\Views\" />
     <Folder Include="ModuloEstoqueEntrada\Dominio\" />
     <Folder Include="ModuloEstoqueEntrada\Infra\" />
+    <Folder Include="ModuloEstoqueSaida\" />
+    <Folder Include="ModuloEstoqueSaida\Aplicacao\" />
+    <Folder Include="ModuloEstoqueSaida\Apresentacao\" />
+    <Folder Include="ModuloEstoqueSaida\Apresentacao\Views\" />
+    <Folder Include="ModuloEstoqueSaida\Dominio\" />
+    <Folder Include="ModuloEstoqueSaida\Infra\" />
     <Folder Include="ModuloFuncionario\" />
     <Folder Include="ModuloFornecedor\" />
     <Folder Include="ModuloFornecedor\Aplicacao\" />
