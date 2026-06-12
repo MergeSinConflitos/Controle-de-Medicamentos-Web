@@ -8,39 +8,39 @@ namespace ControleDeMedicamentos.WebApplication.ModuloEstoqueSaida.Dominio;
 public class EstoqueSaida : EntidadeBase<EstoqueSaida>
 {   
     public DateTime Data { get; set; } = DateTime.Now;
-    public Paciente Paciente { get; set;} 
-    public List<Medicamento> Medicamentos { get; set;}
-    
-    public EstoqueSaida(DateTime data, Paciente paciente, List<Medicamento> medicamentos)
-    {   
-        Data = data;
-        Paciente = paciente;
-        Medicamentos = medicamentos;
-    }
+    public Medicamento Medicamento { get; set; } = null!;
+    public Paciente Paciente { get; set; } = null!;
+    public int Quantidade { get; set; }
 
-    public EstoqueSaida()
+    public EstoqueSaida() { }
+
+    public EstoqueSaida(Medicamento medicamento, Paciente paciente, int quantidade)
     {
-        
+        Medicamento = medicamento;
+        Paciente = paciente;
+        Quantidade = quantidade;
+        Data = DateTime.Now;
     }
 
     public override void Atualizar(EstoqueSaida entidadeAtualizada)
     {
+        Medicamento = entidadeAtualizada.Medicamento;
         Paciente = entidadeAtualizada.Paciente;
-        Medicamentos = entidadeAtualizada.Medicamentos;
+        Quantidade = entidadeAtualizada.Quantidade;
     }
 
     public override List<string> Validar()
     {
         List<string> erros = new List<string>();
 
-        if (Data == default)
-            erros.Add("O campo 'Data' é obrigatório");
-
         if (Paciente == null)
-            erros.Add("O campo 'Paciente' é obrigatório");
+            erros.Add("O campo \"Paciente\" é obrigatório");
 
-        if (Medicamentos == null || Medicamentos.Count == 0)
-            erros.Add("Selecione ao menos um medicamento");
+        if (Medicamento == null)
+            erros.Add("O campo \"Medicamento\" é obrigatório");
+
+        if (Quantidade <= 0)
+            erros.Add("A quantidade deve ser maior que zero");
 
         return erros;
     }
