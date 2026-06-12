@@ -1,6 +1,6 @@
 # CONTROLE DE MEDICAMENTOS WEB
 
-![]()
+![](ControleDeMedicamentos.WebApplication/Docs/CdMWeb.gif)
 
 ## Introdução
 
