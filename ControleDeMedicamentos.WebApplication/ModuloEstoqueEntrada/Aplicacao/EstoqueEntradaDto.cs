@@ -28,9 +28,9 @@ public record DetalhesEstoqueEntradaDto(
     int Quantidade
 );
 
-public record OpcaoEntradaDto(
+public record OpcaoFuncionarioDto(
     Guid Id,
     string Nome,
-    string Descricao,
-    string QuantidadeEmEstoque
+    string Telefone,
+    string Cpf
 );

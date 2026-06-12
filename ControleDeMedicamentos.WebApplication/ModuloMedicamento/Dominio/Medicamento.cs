@@ -22,6 +22,10 @@ public class Medicamento : EntidadeBase<Medicamento>
     {
 
     }
+    public void RegistrarEntrada(int quantidade)
+    {
+        QuantidadeEmEstoque += quantidade;
+    }
 
     public override void Atualizar(Medicamento entidadeAtualizada)
     {
