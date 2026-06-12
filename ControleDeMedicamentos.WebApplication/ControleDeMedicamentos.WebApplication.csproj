@@ -22,6 +22,7 @@
     <Folder Include="ModuloEstoqueEntrada\" />
     <Folder Include="ModuloEstoqueEntrada\Aplicacao\" />
     <Folder Include="ModuloEstoqueEntrada\Apresentacao\" />
+    <Folder Include="ModuloEstoqueEntrada\Apresentacao\Views\" />
     <Folder Include="ModuloEstoqueEntrada\Dominio\" />
     <Folder Include="ModuloEstoqueEntrada\Infra\" />
     <Folder Include="ModuloFuncionario\" />

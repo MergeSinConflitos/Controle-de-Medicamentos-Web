@@ -24,10 +24,10 @@ public record CadastrarEstoqueEntradaViewModel(
     [Range(1, int.MaxValue, ErrorMessage = "O campo \"Quantidade\" deve conter um valor positivo (maior que 0).")]
     int Quantidade,
 
-    bool ConfirmarEntrada,
+    bool AdicionarOutro,
 
     [ValidateNever]
-    List<OpcaoFuncionarioViewModel> MedicamentosDisponiveis
+    List<OpcaoFuncionarioViewModel> Funcionarios
 );
 
 public record OpcaoFuncionarioViewModel(

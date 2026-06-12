@@ -7,6 +7,10 @@ public class EstoqueEntradaProfile : Profile
 {
     public EstoqueEntradaProfile()
     {
-        
+        CreateMap<OpcaoFuncionarioDto, OpcaoFuncionarioViewModel>();
+        CreateMap<ListarEstoqueEntradaDto, ListarEstoqueEntradaViewModel>();
+        CreateMap<DetalhesEstoqueEntradaDto, DetalhesEstoqueEntradaViewModel>();
+        CreateMap<CadastrarEstoqueEntradaViewModel, CadastrarEstoqueEntradaDto>();
+
     }
 }
