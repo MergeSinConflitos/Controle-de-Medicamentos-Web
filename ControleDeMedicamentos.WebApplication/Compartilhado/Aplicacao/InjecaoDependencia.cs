@@ -3,6 +3,7 @@ using ControleDeMedicamentos.WebApplication.ModuloFornecedor.Aplicacao;
 using ControleDeMedicamentos.WebApplication.ModuloMedicamento.Aplicacao;
 using ControleDeMedicamentos.WebApplication.ModuloPaciente.Aplicacao;
 using ControleDeMedicamentos.WebApplication.ModuloEstoqueEntrada.Aplicacao;
+using ControleDeMedicamentos.WebApplication.ModuloEstoqueSaida.Aplicacao;
 
 namespace ControleDeMedicamentos.WebApplication.Compartilhado.Aplicacao;
 

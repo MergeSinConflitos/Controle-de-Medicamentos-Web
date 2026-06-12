@@ -76,14 +76,27 @@ else
                     </div>
 
                     <div class="card-footer bg-transparent border-0 pt-0 pb-3">
-                        <div class="d-grid gap-2 d-md-flex">
-                            <a class="btn btn-primary btn-sm flex-fill" asp-action="Editar" asp-route-id="@paciente.Id">
-                                Editar
-                            </a>
+                        <div  class="d-grid gap-2">
 
-                            <a class="btn btn-outline-danger btn-sm flex-fill" asp-action="Excluir" asp-route-id="@paciente.Id">
-                                Excluir
-                            </a>
+                             <div class="d-flex gap-2">
+
+                                <a class="btn btn-success btn-sm flex-fill" asp-controller="EstoqueSaida" asp-action="Listar"
+                                   asp-route-pacienteId="@paciente.Id">
+                                    Saidas
+                                </a>
+
+                            </div>  
+
+                            <div class="d-flex gap-2">
+
+                                <a class="btn btn-primary btn-sm flex-fill" asp-action="Editar" asp-route-id="@paciente.Id">
+                                    Editar
+                                </a>
+
+                                <a class="btn btn-outline-danger btn-sm flex-fill" asp-action="Excluir" asp-route-id="@paciente.Id">
+                                    Excluir
+                                </a>
+                            </div>    
                         </div>
                     </div>
 

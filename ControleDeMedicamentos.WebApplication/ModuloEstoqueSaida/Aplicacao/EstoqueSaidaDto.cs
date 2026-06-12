@@ -10,10 +10,8 @@ public record CadastrarEstoqueSaidaDto(
 public record ListarEstoqueSaidaDto(
     Guid Id,
     DateTime Data,
-    Guid PacienteId,
-    string NomePaciente,
     Guid MedicamentoId,
-    string NomeMedicamento,
+    string MedicamentoNome,
     int QuantidadeEmEstoque,
     int Quantidade
 );
@@ -33,4 +31,10 @@ public record OpcaoMedicamentoDto(
     Guid Id,
     string Nome,
     int QuantidadeEmEstoque
+);
+
+public record GerenciarEstoqueSaidaDto(
+    Guid PacienteId,
+    string PacienteNome,
+    List<ListarEstoqueSaidaDto> Saidas
 );

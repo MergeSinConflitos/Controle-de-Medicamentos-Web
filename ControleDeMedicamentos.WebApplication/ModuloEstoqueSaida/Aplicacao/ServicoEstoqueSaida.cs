@@ -22,7 +22,7 @@ public class ServicoEstoqueSaida
         this.repositorioPaciente = repositorioPaciente;
     }
 
-    public Result Cadastrar(CadastrarEstoqueSaidaDto dto)
+   public Result Cadastrar(CadastrarEstoqueSaidaDto dto)
     {
         Result<(Paciente Paciente, Medicamento Medicamento)> resultadoRelacionamentos =
             SelecionarRelacionamentos(dto.PacienteId, dto.MedicamentoId);
@@ -55,30 +55,23 @@ public class ServicoEstoqueSaida
         return Result.Ok().WithSuccess("Requisição de saída registrada com sucesso");
     }
 
-    public List<ListarEstoqueSaidaDto> SelecionarTodosPorPaciente(Guid pacienteId)
+    public Result<GerenciarEstoqueSaidaDto> SelecionarTodosPorPaciente(Guid pacienteId)
     {
-        return repositorioEstoqueSaida
+        Paciente? paciente = repositorioPaciente.SelecionarPorId(pacienteId);
+
+        if (paciente == null)
+            return Result.Fail("Paciente não encontrado.");
+
+        List<ListarEstoqueSaidaDto> saidas = repositorioEstoqueSaida
             .Filtrar(s => s.Paciente.Id == pacienteId)
             .Select(MapearParaListarDto)
             .ToList();
-    }
 
-    public List<ListarEstoqueSaidaDto> SelecionarTodos()
-    {
-        return repositorioEstoqueSaida
-            .SelecionarTodos()
-            .Select(MapearParaListarDto)
-            .ToList();
-    }
-
-    public Result<DetalhesEstoqueSaidaDto> SelecionarPorId(Guid id)
-    {
-        EstoqueSaida? saida = repositorioEstoqueSaida.SelecionarPorId(id);
-
-        if (saida == null)
-            return Result.Fail("Requisição de saída não encontrada.");
-
-        return Result.Ok(MapearParaDetalhesDto(saida));
+        return Result.Ok(new GerenciarEstoqueSaidaDto(
+            paciente.Id,
+            paciente.Nome,
+            saidas
+        ));
     }
 
     public List<OpcaoMedicamentoDto> SelecionarMedicamentos()
@@ -124,22 +117,6 @@ public class ServicoEstoqueSaida
         return new ListarEstoqueSaidaDto(
             estoque.Id,
             estoque.Data,
-            estoque.Paciente.Id,
-            estoque.Paciente.Nome,
-            estoque.Medicamento.Id,
-            estoque.Medicamento.Nome,
-            estoque.Medicamento.QuantidadeEmEstoque,
-            estoque.Quantidade
-        );
-    }
-
-    private static DetalhesEstoqueSaidaDto MapearParaDetalhesDto(EstoqueSaida estoque)
-    {
-        return new DetalhesEstoqueSaidaDto(
-            estoque.Id,
-            estoque.Data,
-            estoque.Paciente.Id,
-            estoque.Paciente.Nome,
             estoque.Medicamento.Id,
             estoque.Medicamento.Nome,
             estoque.Medicamento.QuantidadeEmEstoque,
